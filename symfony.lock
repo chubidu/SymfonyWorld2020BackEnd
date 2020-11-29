@@ -133,6 +133,9 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
+    "fakerphp/faker": {
+        "version": "v1.12.0"
+    },
     "fig/link-util": {
         "version": "1.1.1"
     },
@@ -180,9 +183,6 @@
             "version": "2.2",
             "ref": "258300d52be6ad59b32a888d5ddafbf9638540ff"
         }
-    },
-    "fzaninotto/faker": {
-        "version": "v1.8.0"
     },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.36"
@@ -253,8 +253,20 @@
     "lakion/mink-debug-extension": {
         "version": "v1.2.3"
     },
+    "laminas/laminas-code": {
+        "version": "3.5.0"
+    },
+    "laminas/laminas-eventmanager": {
+        "version": "3.3.0"
+    },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
     "lchrusciel/api-test-case": {
         "version": "v3.1.3"
+    },
+    "lcobucci/clock": {
+        "version": "2.0.0"
     },
     "lcobucci/jwt": {
         "version": "3.3.2"
@@ -333,6 +345,18 @@
             "version": "3.2",
             "ref": "5ef2976310e8f9621c1a722a73bfbe115c1559a3"
         }
+    },
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "config/packages/nelmio_cors.yaml"
+        ]
     },
     "nette/finder": {
         "version": "v2.4.2"
@@ -826,9 +850,6 @@
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
     },
-    "symfony/security": {
-        "version": "v4.1.3"
-    },
     "symfony/security-bundle": {
         "version": "3.3",
         "recipe": {
@@ -837,6 +858,18 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/security-core": {
+        "version": "v4.4.17"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.4.17"
+    },
+    "symfony/security-guard": {
+        "version": "v4.4.17"
+    },
+    "symfony/security-http": {
+        "version": "v4.4.17"
     },
     "symfony/serializer": {
         "version": "v5.1.2"
@@ -961,6 +994,9 @@
     "twig/twig": {
         "version": "v2.5.0"
     },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
+    },
     "webmozart/assert": {
         "version": "1.3.0"
     },
@@ -984,12 +1020,6 @@
     },
     "winzou/state-machine-bundle": {
         "version": "v0.3.1"
-    },
-    "zendframework/zend-code": {
-        "version": "3.3.1"
-    },
-    "zendframework/zend-eventmanager": {
-        "version": "3.2.1"
     },
     "zendframework/zend-hydrator": {
         "version": "2.4.0"
