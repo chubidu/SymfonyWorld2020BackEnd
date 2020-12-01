@@ -5,3 +5,6 @@ sylius_fixtures:
                 wishlist:
                     options:
                         count: 5
+                supplier:
+                    options:
+                        count: 15
