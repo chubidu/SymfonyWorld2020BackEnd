@@ -289,6 +289,19 @@
                     <attribute name="summary">Applies coupon to cart</attribute>
                 </attribute>
             </itemOperation>
+
+            <itemOperation name="shop_add_items_from_wishlist">
+                <attribute name="method">PATCH</attribute>
+                <attribute name="path">/shop/orders/{id}/items-from-wishlist</attribute>
+                <attribute name="messenger">input</attribute>
+                <attribute name="input">App\Command\AddItemsFromWishlist</attribute>
+                <attribute name="denormalization_context">
+                    <attribute name="groups">cart:add_item</attribute>
+                </attribute>
+                <attribute name="openapi_context">
+                    <attribute name="summary">Add items from wishlist to cart</attribute>
+                </attribute>
+            </itemOperation>
         </itemOperations>
 
         <subresourceOperations>

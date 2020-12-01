@@ -17,7 +17,6 @@ use Sylius\Component\Core\OrderCheckoutTransitions;
 use Sylius\Component\Core\Repository\ProductVariantRepositoryInterface;
 use Sylius\Component\Customer\Context\CustomerContextInterface;
 use Sylius\Component\Order\Modifier\OrderItemQuantityModifierInterface;
-use Sylius\Component\Order\Processor\OrderProcessorInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
