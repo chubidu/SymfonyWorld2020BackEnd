@@ -44,3 +44,6 @@ services:
 
     Sylius\Component\Core\Factory\CartItemFactoryInterface:
         alias: 'sylius.factory.order_item'
+        
+    SM\Factory\FactoryInterface:
+        alias: 'sm.factory'
