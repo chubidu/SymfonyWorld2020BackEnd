@@ -41,3 +41,6 @@ services:
 
     Sylius\Component\Customer\Context\CustomerContextInterface:
         alias: 'sylius.context.customer'
+
+    Sylius\Component\Core\Factory\CartItemFactoryInterface:
+        alias: 'sylius.factory.order_item'
