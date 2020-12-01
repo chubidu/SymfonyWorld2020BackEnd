@@ -33,3 +33,11 @@ services:
     App\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    App\DataPersister\WishlistDataPersister:
+        arguments:
+            - '@api_platform.doctrine.orm.data_persister'
+            - '@sylius.context.customer'
+
+    Sylius\Component\Customer\Context\CustomerContextInterface:
+        alias: 'sylius.context.customer'
