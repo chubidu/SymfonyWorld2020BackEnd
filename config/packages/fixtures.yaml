@@ -1,0 +1,7 @@
+sylius_fixtures:
+    suites:
+        app:
+            fixtures:
+                wishlist:
+                    options:
+                        count: 5
