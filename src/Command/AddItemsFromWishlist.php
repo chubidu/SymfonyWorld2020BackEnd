@@ -4,26 +4,36 @@ declare(strict_types=1);
 
 namespace App\Command;
 
-final class AddItemsFromWishlist
+use Sylius\Bundle\ApiBundle\Command\OrderTokenValueAwareInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
+
+final class AddItemsFromWishlist implements OrderTokenValueAwareInterface
 {
-    /** @var string */
-    private $orderToken;
-    /** @var int */
+    /** @var string|null */
+    private $orderTokenValue;
+    /**
+     * @var int
+     * @Groups("cart:add_items")
+     */
     private $wishlistId;
 
-    public function __construct(string $orderToken, int $wishlistId)
+    public function __construct(int $wishlistId)
     {
-        $this->orderToken = $orderToken;
         $this->wishlistId = $wishlistId;
-    }
-
-    public function getOrderToken(): string
-    {
-        return $this->orderToken;
     }
 
     public function getWishlistId(): int
     {
         return $this->wishlistId;
+    }
+
+    public function getOrderTokenValue(): ?string
+    {
+        return $this->orderTokenValue;
+    }
+
+    public function setOrderTokenValue(?string $orderTokenValue): void
+    {
+        $this->orderTokenValue = $orderTokenValue;
     }
 }

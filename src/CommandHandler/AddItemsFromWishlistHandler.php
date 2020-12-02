@@ -57,7 +57,7 @@ final class AddItemsFromWishlistHandler implements MessageHandlerInterface
         $wishlist = $this->wishlistRepostiory->find($addItemsFromWishlist->getWishlistId());
 
         /** @var Order $cart */
-        $cart = $this->orderRepository->findOneBy(['tokenValue' => $addItemsFromWishlist->getOrderToken()]);
+        $cart = $this->orderRepository->findOneBy(['tokenValue' => $addItemsFromWishlist->getOrderTokenValue()]);
 
         foreach ($wishlist->getProducts() as $product) {
             $cartItem = $this->getItem($product, $cart);

@@ -111,6 +111,9 @@
                 <attribute name="path">/shop/orders/{id}/items-from-wishlist</attribute>
                 <attribute name="messenger">input</attribute>
                 <attribute name="input">App\Command\AddItemsFromWishlist</attribute>
+                <attribute name="denormalization_context">
+                    <attribute name="groups">cart:add_items</attribute>
+                </attribute>
             </itemOperation>
 
             <itemOperation name="shop_address">
