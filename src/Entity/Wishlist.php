@@ -10,11 +10,15 @@ use App\Entity\Product\Product;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="app_wishlist")
- * @ApiResource()
+ * @ApiResource(
+ *     routePrefix="/shop/account",
+ *     denormalizationContext={"groups"={"shop:wishlist:create", "shop:wishlist:update"}}
+ * )
  */
 class Wishlist
 {
@@ -29,6 +33,7 @@ class Wishlist
     /**
      * @var string
      * @ORM\Column(type="string")
+     * @Groups({"shop:wishlist:create", "shop:wishlist:update"})
      */
     private $title;
 
@@ -39,6 +44,7 @@ class Wishlist
      *     name="wishlists_products",
      *     joinColumns={@ORM\JoinColumn(name="wishlist_id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id")})
+     * @Groups({"shop:wishlist:create", "shop:wishlist:update"})
      */
     private $products;
 
