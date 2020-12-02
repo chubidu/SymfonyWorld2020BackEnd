@@ -1,0 +1,5 @@
+sylius_resource:
+    resources:
+        app.wishlist:
+            classes:
+                model: App\Entity\Wishlist

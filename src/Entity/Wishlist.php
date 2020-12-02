@@ -10,6 +10,7 @@ use App\Entity\Product\Product;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Sylius\Component\Resource\Model\ResourceInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
@@ -20,10 +21,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     denormalizationContext={"groups"={"shop:wishlist:create", "shop:wishlist:update"}}
  * )
  */
-class Wishlist
+class Wishlist implements ResourceInterface
 {
     /**
      * @var int
+     *
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
@@ -61,7 +63,7 @@ class Wishlist
         $this->title = $title;
     }
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }

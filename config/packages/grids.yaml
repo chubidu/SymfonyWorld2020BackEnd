@@ -1,0 +1,26 @@
+sylius_grid:
+    grids:
+        app_admin_wishlist:
+            driver:
+                options:
+                    class: "%app.model.wishlist.class%"
+            fields:
+                id:
+                    type: string
+                    label: sylius.ui.id
+                title:
+                    type: string
+                    label: "Title"
+                customer:
+                    type: twig
+                    label: sylius.ui.customer
+                    options:
+                        template: "Wishlist/Grid/customer.html.twig"
+            actions:
+                item:
+                    delete:
+                        type: delete
+            filters:
+                title:
+                    type: string
+                    label: sylius.ui.search
