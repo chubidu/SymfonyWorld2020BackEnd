@@ -120,10 +120,7 @@ final class BuyProductHandler implements MessageHandlerInterface
         // Finish the checkout process
         $stateMachine = $this->stateMachineFactory->get($cart, OrderCheckoutTransitions::GRAPH);
 
-        $stateMachine->apply(OrderCheckoutTransitions::TRANSITION_ADDRESS);
-        $stateMachine->apply(OrderCheckoutTransitions::TRANSITION_SELECT_SHIPPING);
-        $stateMachine->apply(OrderCheckoutTransitions::TRANSITION_SELECT_PAYMENT);
-        $stateMachine->apply(OrderCheckoutTransitions::TRANSITION_COMPLETE);
+        $stateMachine->apply('buy');
 
         // Persist new cart to database
         $this->orderManager->persist($cart);

@@ -1,0 +1,16 @@
+winzou_state_machine:
+    sylius_order_checkout:
+        transitions:
+            buy:
+                from: [cart]
+                to: completed
+        callbacks:
+            after:
+                app_recalculate_cart:
+                    on: ["buy"]
+                    do: ["@sylius.order_processing.order_processor", "process"]
+                    args: ["object"]
+                app_create_order:
+                    on: ["buy"]
+                    do: ["@sm.callback.cascade_transition", "apply"]
+                    args: ["object", "event", "'create'", "'sylius_order'"]
