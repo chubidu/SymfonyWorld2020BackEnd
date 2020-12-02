@@ -106,6 +106,13 @@
                 </attribute>
             </itemOperation>
 
+            <itemOperation name="shop_add_wishlist">
+                <attribute name="method">PATCH</attribute>
+                <attribute name="path">/shop/orders/{id}/items-from-wishlist</attribute>
+                <attribute name="messenger">input</attribute>
+                <attribute name="input">App\Command\AddItemsFromWishlist</attribute>
+            </itemOperation>
+
             <itemOperation name="shop_address">
                 <attribute name="method">PATCH</attribute>
                 <attribute name="path">/shop/orders/{id}/address</attribute>
