@@ -26,7 +26,7 @@ services:
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/*'
-        exclude: '../src/{Entity,Migrations,Tests,Kernel.php}'
+        exclude: '../src/{Command,Entity,Migrations,Tests,Kernel.php}'
 
     # Controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
@@ -41,3 +41,9 @@ services:
 
     Sylius\Component\Customer\Context\CustomerContextInterface:
         alias: 'sylius.context.customer'
+        
+    Sylius\Component\Core\Factory\CartItemFactoryInterface:
+        alias: 'sylius.factory.order_item'
+        
+    SM\Factory\FactoryInterface:
+        alias: 'sm.factory'
